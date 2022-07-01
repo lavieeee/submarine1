@@ -1,0 +1,48 @@
+
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    min-width: 5em;
+    text-align: center;
+}
+
+tr {
+    line-height: 3.5;
+}
+
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+tr:first-child {
+    background-color: #444;
+    color: #fff;
+    line-height: 2.5;
+}
+
+tr:hover:not(:first-child) {
+    background-color: hsl(60 100% 85%);
+}
+
+
+.btn {
+
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 15px;
+    background-color: darkcyan;
+    
+}
+
+

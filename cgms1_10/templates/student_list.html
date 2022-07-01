@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link href="/student_list.css" rel="stylesheet" />
+{% endblock %}
+
+{% block page_content %}
+<div class="paper">
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>性别</th>
+            <th>学院</th>
+            <th>学级</th>
+            <th>班级</th>
+            <th>查看成绩</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.no }}</td>
+            <td>{{ item.gender }}</td>
+            <td>{{ item.college }}</td>
+            <td>{{ item.entry_year }}</td>
+            <td>{{ item.class_name }}</td>
+            <td>
+                <div class='btn'>
+                    <a href="/student/view_grade/{{item.sn}}">
+                        查看全部成绩
+                    </a>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

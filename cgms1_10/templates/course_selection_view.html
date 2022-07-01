@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link href="/course_list.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block page_content %}
+<div class="paper">
+    <a href="javascript:;" onClick="javascript:history.back(-1);">返回上一页</a>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>课程名</th>
+            <th>班次号</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.no }}</td>
+            <td>{{ item.c_name }}</td>
+            <td>{{ item.co_cls }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

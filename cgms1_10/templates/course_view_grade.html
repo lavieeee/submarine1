@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link href="/course_list.css" rel="stylesheet" />
+{% endblock %}
+
+{% block page_content %}
+<div class="paper">
+    <a href="javascript:;" onClick="javascript:history.back(-1);">返回上一页</a>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>课程名</th>
+            <th>学期</th>
+            <th>成绩</th>
+            <th>修改成绩</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.stu_name }}</td>
+            <td>{{ item.no }}</td>
+            <td>{{ item.cou_name }}</td>
+            <td>{{ item.semester }}</td>
+            <td>{{ item.grade }}</td>
+            <td>
+                <div class='btn'>
+                    <a href="/grade/edit/{{item.stu_sn}}/{{item.cou_sn}}">
+                        修改成绩
+                    </a>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

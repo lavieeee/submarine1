@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link href="/course_list.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block page_content %}
+<div class="paper">
+    <table>
+        <tr>
+            <th>课程名</th>
+            <th>课程号</th>
+            <th>学分</th>
+            <th>学时</th>
+            <th>查看课程信息</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.no }}</td>
+            <td>{{ item.credit }}</td>
+            <td>{{ item.class_hours }}</td>
+            <td>
+                <div class='btn'>
+                    <a href="/course/view_course/{{item.no}}">
+                        查看课程信息
+                    </a>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
